@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "naskahs",
+  "info": {
+    "name": "Naskah",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Judul": {
+      "type": "string",
+      "required": true
+    },
+    "Subjudul": {
+      "type": "string"
+    },
+    "Body": {
+      "type": "richtext"
+    },
+    "Thumbnail": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "Play": {
+      "type": "text"
+    },
+    "kontributors": {
+      "collection": "kontributor",
+      "via": "naskahs",
+      "dominant": true
+    },
+    "kategoris": {
+      "model": "kategori"
+    }
+  }
+}

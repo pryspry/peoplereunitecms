@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "kontributors",
+  "info": {
+    "name": "Kontributor"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nama": {
+      "type": "string",
+      "required": true
+    },
+    "Bio": {
+      "type": "richtext",
+      "required": true
+    },
+    "Foto": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "naskahs": {
+      "via": "kontributors",
+      "collection": "naskah"
+    }
+  }
+}
